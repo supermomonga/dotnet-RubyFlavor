@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
 
 namespace RubyFlavor
 {
-    public static class IEnumerableExtension
+    static class IEnumerableExtensions
     {
         /// <summary>
         /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
@@ -32,8 +31,17 @@ namespace RubyFlavor
                 }
             }
         }
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_index.html
+        /// </summary>
         public static IEnumerable<(T, int)> WithIndex<T>(this IEnumerable<T> xs, int offset = 0)
-        => xs.Select((x, i) => (x, i + offset));
+        {
+            foreach(var x in xs)
+            {
+                yield return (x, offset++);
+            }
+        }
 
     }
 }
