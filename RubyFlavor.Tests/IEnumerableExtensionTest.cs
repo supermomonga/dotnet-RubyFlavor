@@ -37,5 +37,15 @@ namespace RubyFlavor.Tests
                 Assert.Equal(new List<int> { 2 }, x);
             }
         }
+
+        [Fact]
+        public void ChunkWithEmptyListTest()
+        {
+            var xs = new List<int> {};
+            Func<int, bool> keySelector = x => x % 2 == 0;
+            var chunked = xs.Chunk(keySelector);
+
+            Assert.Equal(0, chunked.Count());
+        }
     }
 }

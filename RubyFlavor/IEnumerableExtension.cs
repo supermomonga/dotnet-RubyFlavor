@@ -16,19 +16,23 @@ namespace RubyFlavor
         /// </summary>
         public static IEnumerable<IGrouping<TKey, TElement>> Chunk<TElement, TKey>(this IEnumerable<TElement> xs, Func<TElement, TKey> keySelector)
         {
-            if (xs.Count() > 0)
+            ChunkedList<TKey, TElement> chunkedListState = null;
+            foreach (var x in xs)
             {
-                var chunkedListState = new ChunkedList<TKey, TElement>(){ Key = keySelector.Invoke(xs.First()) };
-                foreach (var x in xs)
+                var key = keySelector.Invoke(x);
+                if (chunkedListState == null)
                 {
-                    var key = keySelector.Invoke(x);
-                    if (!key.Equals(chunkedListState.Key))
-                    {
-                        yield return chunkedListState;
-                        chunkedListState = new ChunkedList<TKey, TElement>() { Key = keySelector.Invoke(x) };
-                    }
-                    chunkedListState.Add(x);
+                    chunkedListState = new ChunkedList<TKey, TElement>() { Key = key };
                 }
+                else if (!key.Equals(chunkedListState.Key))
+                {
+                    yield return chunkedListState;
+                    chunkedListState = new ChunkedList<TKey, TElement>() { Key = keySelector.Invoke(x) };
+                }
+                chunkedListState.Add(x);
+            }
+            if (chunkedListState != null)
+            {
                 yield return chunkedListState;
             }
         }
