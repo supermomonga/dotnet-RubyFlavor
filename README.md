@@ -4,8 +4,8 @@
 
 ### Enumerable module
 
-- [X] `Enumerable#all?` -> `IEnumerable#All`
-- [X] `Enumerable#any?` -> `IEnumerable#All`
+- `Enumerable#all?` -> `IEnumerable#All`
+- `Enumerable#any?` -> `IEnumerable#Any`
 - [X] `Enumerable#chunk`
 - [ ] `Enumerable#chunk_while`
 - [ ] `Enumerable#collect`
