@@ -8,8 +8,8 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 
 ### Enumerable module
 
-- [Enumerable#all?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/all?.html) -> `IEnumerable#All` exists.
-- [Enumerable#any?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/any?.html) -> `IEnumerable#Any` exists.
+- [Enumerable#all?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/all=3f.html) -> `IEnumerable#All` exists.
+- [Enumerable#any?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/any=3f.html) -> `IEnumerable#Any` exists.
 - [X] [Enumerable#chunk](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html)
 - [ ] [Enumerable#chunk_while](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk_while.html)
 - [ ] [Enumerable#collect](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/collect.html)
@@ -36,8 +36,8 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [ ] [Enumerable#grep](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/grep.html)
 - [ ] [Enumerable#grep_v](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/grep_v.html)
 - [ ] [Enumerable#group_by](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/group_by.html)
-- [ ] [Enumerable#include?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/include?.html)
-- [ ] [Enumerable#member?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/member?.html)
+- [ ] [Enumerable#include?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/include=3f.html)
+- [ ] [Enumerable#member?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/member=3f.html)
 - [ ] [Enumerable#inject](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/inject.html)
 - [ ] [Enumerable#reduce](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/reduce.html)
 - [ ] [Enumerable#lazy](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/lazy.html)
@@ -47,8 +47,8 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [ ] [Enumerable#min_by](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/min_by.html)
 - [ ] [Enumerable#minmax](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/minmax.html)
 - [ ] [Enumerable#minmax_by](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/minmax_by.html)
-- [ ] [Enumerable#none?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/none?.html)
-- [ ] [Enumerable#one?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/one?.html)
+- [ ] [Enumerable#none?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/none=3f.html)
+- [ ] [Enumerable#one?](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/one=3f.html)
 - [ ] [Enumerable#partition](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/partition.html)
 - [ ] [Enumerable#reject](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/reject.html)
 - [ ] [Enumerable#reverse_each](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/reverse_each.html)
