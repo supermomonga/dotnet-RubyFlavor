@@ -1,6 +1,6 @@
 language: csharp
 mono: none
-dotnet: 2.0.2
+dotnet: 2.0.0
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   NUGET_XMLDOC_MODE: skip
