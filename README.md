@@ -1,11 +1,13 @@
 # RubyFlavor
 
-## Status
+RubyFlavor is a .NET Standard library which provides Ruby programming language flavored utilities.
+
+## Implementation statuses
 
 ### Enumerable module
 
-- `Enumerable#all?` -> `IEnumerable#All`
-- `Enumerable#any?` -> `IEnumerable#Any`
+- `Enumerable#all?` -> `IEnumerable#All` exists.
+- `Enumerable#any?` -> `IEnumerable#Any` exists.
 - [X] `Enumerable#chunk`
 - [ ] `Enumerable#chunk_while`
 - [ ] `Enumerable#collect`
