@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.0.2
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  NUGET_XMLDOC_MODE: skip
+script:
+  - dotnet restore
+  - dotnet build ./RubyFlavor/
+  - dotnet test ./TheLog.Tests/
