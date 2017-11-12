@@ -12,7 +12,7 @@ namespace RubyFlavor
     public static class IEnumerableExtensions
     {
         /// <summary>
-        /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
+        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
         /// </summary>
         public static IEnumerable<IGrouping<TKey, TElement>> Chunk<TElement, TKey>(this IEnumerable<TElement> xs, Func<TElement, TKey> keySelector)
         {
@@ -38,7 +38,19 @@ namespace RubyFlavor
         }
 
         /// <summary>
-        /// https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_index.html
+        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/each_cons.html
+        /// </summary>
+        public static IEnumerable<T> EachConsecutive<T>(this IEnumerable<T> xs, int length)
+        {
+            var count = xs.Count();
+            for (var i = 0; i < count; i++)
+            {
+                yield return xs.Skip(i).Take(length);
+            }
+        }
+
+        /// <summary>
+        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_index.html
         /// </summary>
         public static IEnumerable<(T, int)> WithIndex<T>(this IEnumerable<T> xs, int offset = 0)
         {
