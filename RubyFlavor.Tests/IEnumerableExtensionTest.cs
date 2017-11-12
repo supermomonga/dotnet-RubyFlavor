@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Xunit;
 using System.Collections.Generic;
 using RubyFlavor;
@@ -10,17 +11,31 @@ namespace RubyFlavor.Tests
         [Fact]
         public void ChunkTest()
         {
-            IEnumerable<int> xs = new List<int> { 1, 3, 5, 2, 4, 6, 1, 2, 1, 2 };
-            IEnumerable<(bool, IEnumerable<int>)> expected = new List<(bool, IEnumerable<int>)> {
-                (false, new List<int> {1, 3, 5}),
-                (true,  new List<int> {2, 4, 6}),
-                (false, new List<int> {1}),
-                (true,  new List<int> {2}),
-                (false, new List<int> {1}),
-                (true,  new List<int> {2})
-            };
+            var xs = new List<int> { 1, 3, 5, 2, 4, 6, 1, 2 };
             Func<int, bool> keySelector = x => x % 2 == 0;
-            Assert.Equal(1, 1);
+            var chunked = xs.Chunk(keySelector);
+
+            Assert.Equal(4, chunked.Count());
+            {
+                var x = chunked.ElementAt(0);
+                Assert.Equal(x.Key, false);
+                Assert.Equal(new List<int> { 1, 3, 5 }, x);
+            }
+            {
+                var x = chunked.ElementAt(1);
+                Assert.Equal(x.Key, true);
+                Assert.Equal(new List<int> { 2, 4, 6 }, x);
+            }
+            {
+                var x = chunked.ElementAt(2);
+                Assert.Equal(x.Key, false);
+                Assert.Equal(new List<int> { 1 }, x);
+            }
+            {
+                var x = chunked.ElementAt(3);
+                Assert.Equal(x.Key, true);
+                Assert.Equal(new List<int> { 2 }, x);
+            }
         }
     }
 }

@@ -4,31 +4,36 @@ using System.Linq;
 
 namespace RubyFlavor
 {
+    internal class ChunkedList<TKey, TElement> : List<TElement>, IGrouping<TKey, TElement>
+    {
+        public TKey Key { get; set; }
+    }
+
     public static class IEnumerableExtensions
     {
         /// <summary>
         /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
         /// </summary>
-        public static IEnumerable<(TKey, IEnumerable<T1>)> Chunk<T1, TKey>(this IEnumerable<T1> xs, Func<T1, TKey> predicate)
+        public static IEnumerable<IGrouping<TKey, TElement>> Chunk<TElement, TKey>(this IEnumerable<TElement> xs, Func<TElement, TKey> keySelector)
         {
             if (xs.Count() > 0)
             {
-                var keyState = predicate.Invoke(xs.First());
-                var elementState = new List<T1>();
+                var chunkedListState = new ChunkedList<TKey, TElement>(){ Key = keySelector.Invoke(xs.First()) };
                 foreach (var x in xs)
                 {
-                    var key = predicate.Invoke(x);
-                    if (key.Equals(keyState))
+                    var key = keySelector.Invoke(x);
+                    if (key.Equals(chunkedListState.Key))
                     {
-                        elementState.Add(x);
+                        chunkedListState.Add(x);
                     }
                     else
                     {
-                        yield return (keyState, elementState);
-                        keyState = key;
-                        elementState = new List<T1>();
+                        yield return chunkedListState;
+                        chunkedListState = new ChunkedList<TKey, TElement>() { Key = keySelector.Invoke(x) };
+                        chunkedListState.Add(x);
                     }
                 }
+                yield return chunkedListState;
             }
         }
 
