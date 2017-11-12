@@ -22,16 +22,12 @@ namespace RubyFlavor
                 foreach (var x in xs)
                 {
                     var key = keySelector.Invoke(x);
-                    if (key.Equals(chunkedListState.Key))
-                    {
-                        chunkedListState.Add(x);
-                    }
-                    else
+                    if (!key.Equals(chunkedListState.Key))
                     {
                         yield return chunkedListState;
                         chunkedListState = new ChunkedList<TKey, TElement>() { Key = keySelector.Invoke(x) };
-                        chunkedListState.Add(x);
                     }
+                    chunkedListState.Add(x);
                 }
                 yield return chunkedListState;
             }
