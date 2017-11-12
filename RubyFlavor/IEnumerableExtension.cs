@@ -40,7 +40,7 @@ namespace RubyFlavor
         /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/each_cons.html
         /// </summary>
-        public static IEnumerable<T> EachConsecutive<T>(this IEnumerable<T> xs, int length)
+        public static IEnumerable<IEnumerable<T>> EachConsecutive<T>(this IEnumerable<T> xs, int length)
         {
             var count = xs.Count();
             for (var i = 0; i < count; i++)
