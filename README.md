@@ -13,7 +13,7 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [X] [Enumerable#chunk](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html)
 - [ ] [Enumerable#chunk_while](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk_while.html)
 - [ ] [Enumerable#collect](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/collect.html)
-- [ ] [Enumerable#map](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/map.html)
+- [Enumerable#map](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/map.html) -> `IEnumerable#Select` exists.
 - [ ] [Enumerable#collect_concat](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/collect_concat.html)
 - [ ] [Enumerable#flat_map](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/flat_map.html)
 - [ ] [Enumerable#count](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/count.html)
@@ -30,9 +30,9 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [ ] [Enumerable#entries](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/entries.html)
 - [ ] [Enumerable#to_a](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/to_a.html)
 - [ ] [Enumerable#find_all](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/find_all.html)
-- [ ] [Enumerable#select](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/select.html)
+- [Enumerable#select](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/select.html) -> `IEnumerable#Where` exists.
 - [ ] [Enumerable#find_index](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/find_index.html)
-- [ ] [Enumerable#first](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/first.html)
+- [Enumerable#first](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/first.html) -> `IEnumerable#First` exists.
 - [ ] [Enumerable#grep](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/grep.html)
 - [ ] [Enumerable#grep_v](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/grep_v.html)
 - [ ] [Enumerable#group_by](https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/group_by.html)
