@@ -27,7 +27,7 @@ namespace RubyFlavor
                 else if (!key.Equals(chunkedListState.Key))
                 {
                     yield return chunkedListState;
-                    chunkedListState = new ChunkedList<TKey, TElement>() { Key = keySelector.Invoke(x) };
+                    chunkedListState = new ChunkedList<TKey, TElement>() { Key = key };
                 }
                 chunkedListState.Add(x);
             }
