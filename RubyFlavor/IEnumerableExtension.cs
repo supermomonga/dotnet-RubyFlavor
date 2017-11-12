@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RubyFlavor
 {
-    static class IEnumerableExtensions
+    public static class IEnumerableExtensions
     {
         /// <summary>
         /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
