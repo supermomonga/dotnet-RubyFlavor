@@ -68,7 +68,7 @@
 - [ ] `Enumerator#peek_values`
 - [ ] `Enumerator#rewind`
 - [ ] `Enumerator#size`
-- [ ] `Enumerator#with_index`
+- [X] `Enumerator#with_index`
 - [ ] `Enumerator#with_object`
 
 ### Others
