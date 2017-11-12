@@ -43,7 +43,7 @@ namespace RubyFlavor
         public static IEnumerable<IEnumerable<T>> EachConsecutive<T>(this IEnumerable<T> xs, int length)
         {
             var count = xs.Count();
-            for (var i = 0; i < count; i++)
+            for (var i = 0; i < count - length + 1; i++)
             {
                 yield return xs.Skip(i).Take(length);
             }
