@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/supermomonga/dotnet-RubyFlavor.svg?branch=master)](https://travis-ci.org/supermomonga/dotnet-RubyFlavor)
+
 # RubyFlavor
 
 RubyFlavor is a .NET Standard library which provides Ruby programming language flavored utilities.
