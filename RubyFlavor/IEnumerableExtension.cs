@@ -11,9 +11,9 @@ namespace RubyFlavor
 
     public static class IEnumerableExtensions
     {
-        /// <summary>
-        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
-        /// </summary>
+		/// <summary>
+		///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/chunk.html
+		/// </summary>
         public static IEnumerable<IGrouping<TKey, TElement>> Chunk<TElement, TKey>(this IEnumerable<TElement> xs, Func<TElement, TKey> keySelector)
         {
             ChunkedList<TKey, TElement> chunkedListState = null;
@@ -37,6 +37,12 @@ namespace RubyFlavor
             }
         }
 
+		/// <summary>
+        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/collect.html
+        /// </summary>
+		public static IEnumerable<TResult> Collect<TSource, TResult>(this IEnumerable<TSource> xs, Func<TSource, TResult> selector)
+            => xs.Select(selector);
+
         /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/each_cons.html
         /// </summary>
@@ -54,7 +60,7 @@ namespace RubyFlavor
         /// </summary>
         public static IEnumerable<(T, int)> WithIndex<T>(this IEnumerable<T> xs, int offset = 0)
         {
-            foreach(var x in xs)
+            foreach (var x in xs)
             {
                 yield return (x, offset++);
             }
