@@ -94,5 +94,41 @@ namespace RubyFlavor.Tests
                 Assert.Equal(expected, xs.EachConsecutive(length));
             }
         }
+
+        [Fact]
+        [InlineData()]
+        public void EachSliceTest()
+        {
+            {
+                var xs = new List<int> {};
+                var length = 2;
+                var expected = new List<List<int>> {};
+                Assert.Equal(expected, xs.EachSlice(length));
+            }
+            {
+                var xs = Enumerable.Range(1, 4);
+                var length = 2;
+                var expected = new List<List<int>> { new List<int> { 1, 2 }, new List<int> { 3, 4 } };
+                Assert.Equal(expected, xs.EachSlice(length));
+            }
+            {
+                var xs = Enumerable.Range(1, 4);
+                var length = 3;
+                var expected = new List<List<int>> { new List<int> { 1, 2, 3 }, new List<int> { 4 } };
+                Assert.Equal(expected, xs.EachSlice(length));
+            }
+            {
+                var xs = Enumerable.Range(1, 4);
+                var length = 4;
+                var expected = new List<List<int>> { new List<int> { 1, 2, 3, 4 } };
+                Assert.Equal(expected, xs.EachSlice(length));
+            }
+            {
+                var xs = Enumerable.Range(1, 4);
+                var length = 5;
+                var expected = new List<List<int>> { new List<int> { 1, 2, 3, 4 } };
+                Assert.Equal(expected, xs.EachSlice(length));
+            }
+        }
     }
 }

@@ -56,6 +56,18 @@ namespace RubyFlavor
         }
 
         /// <summary>
+        ///   https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/each_slice.html
+        /// </summary>
+        public static IEnumerable<IEnumerable<T>> EachSlice<T>(this IEnumerable<T> xs, int length)
+        {
+            var count = xs.Count();
+            for (var i = 0; i < count; i += length)
+            {
+                yield return xs.Skip(i).Take(length);
+            }
+        }
+
+        /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_index.html
         /// </summary>
         public static IEnumerable<(T, int)> WithIndex<T>(this IEnumerable<T> xs, int offset = 0)
