@@ -1,10 +1,15 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubyFlavor", "RubyFlavor\RubyFlavor.csproj", "{C1F4BC43-957E-48FC-A0F7-7A64AB360146}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubyFlavor.Tests", "RubyFlavor.Tests\RubyFlavor.Tests.csproj", "{B809D2B3-0913-457C-923E-363EA65FC4D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{21EE8698-44AF-4A68-9530-2BBC63CF83C4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

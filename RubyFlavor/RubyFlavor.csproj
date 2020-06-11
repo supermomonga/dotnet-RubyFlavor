@@ -9,4 +9,8 @@
     <Description>.NET Standard utility library which inspired by Ruby programming language.</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
 </Project>

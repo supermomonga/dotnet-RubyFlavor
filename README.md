@@ -75,6 +75,11 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [X] [Enumerator#with_index](https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_index.html)
 - [ ] [Enumerator#with_object](https://docs.ruby-lang.org/ja/latest/method/Enumerator/i/with_object.html)
 
+### Integer class
+
+- [X] [Integer#upto](https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html)
+- [X] [Integer#downto](https://docs.ruby-lang.org/ja/latest/method/Integer/i/downto.html)
+
 ### Others
 
 - [ ] [Object#tap](https://docs.ruby-lang.org/ja/latest/method/Object/i/tap.html)
