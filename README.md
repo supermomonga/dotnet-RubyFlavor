@@ -82,5 +82,5 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 
 ### Others
 
-- [ ] [Object#tap](https://docs.ruby-lang.org/ja/latest/method/Object/i/tap.html)
-- [ ] [Object#yield_self](https://docs.ruby-lang.org/ja/latest/method/Object/i/yield_self.html)
+- [X] [Object#tap](https://docs.ruby-lang.org/ja/latest/method/Object/i/tap.html)
+- [X] [Object#yield_self](https://docs.ruby-lang.org/ja/latest/method/Object/i/yield_self.html)
