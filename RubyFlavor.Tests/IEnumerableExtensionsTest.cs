@@ -8,7 +8,7 @@ namespace RubyFlavor.Tests
 {
     public class IEnumerableExtensions
     {
-		[Fact]
+        [Fact]
         public void ChunkTest()
         {
             var xs = new List<int> { 1, 3, 5, 2, 4, 6, 1, 2 };
@@ -41,12 +41,12 @@ namespace RubyFlavor.Tests
         [Fact]
         public void CollectTest()
         {
-			Func<int, int> selector = x => x * 2;
-			var xs = (new List<int> { 1, 2, 3, 4, 5, 6 }).Collect(selector);
+            Func<int, int> selector = x => x * 2;
+            var xs = (new List<int> { 1, 2, 3, 4, 5, 6 }).Collect(selector);
 
             Assert.Equal(6, xs.Count());
-			Assert.Equal(xs.ElementAt(0), 2);
-			Assert.Equal(xs.ElementAt(1), 4);
+            Assert.Equal(xs.ElementAt(0), 2);
+            Assert.Equal(xs.ElementAt(1), 4);
         }
 
         [Fact]

@@ -9,7 +9,7 @@ namespace RubyFlavor.Tests
 {
     public class IComparableExtensionsTest
     {
-		[Fact]
+        [Fact]
         public void UpToTest()
         {
             {
@@ -58,7 +58,7 @@ namespace RubyFlavor.Tests
                 Assert.Equal(expected, actual);
             }
         }
-		[Fact]
+        [Fact]
         public void DownToTest()
         {
             {
