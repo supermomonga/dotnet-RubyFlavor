@@ -5,9 +5,9 @@ namespace RubyFlavor
 {
     public static class IComparableExtensions
     {
-		/// <summary>
+        /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
-		/// </summary>
+        /// </summary>
         public static IEnumerable<TElement> UpTo<TElement>(this TElement from, TElement to, Func<TElement, TElement> stepper) where TElement : IComparable
         {
             var cursor = from;
@@ -18,9 +18,9 @@ namespace RubyFlavor
             }
         }
 
-		/// <summary>
+        /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
-		/// </summary>
+        /// </summary>
         public static IEnumerable<TElement> UpTo<TElement>(this TElement from, TElement to, dynamic stepper) where TElement : IComparable
         {
             var cursor = from;
@@ -31,9 +31,9 @@ namespace RubyFlavor
             }
         }
 
-		/// <summary>
+        /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
-		/// </summary>
+        /// </summary>
         public static IEnumerable<TElement> DownTo<TElement>(this TElement from, TElement to, Func<TElement, TElement> stepper) where TElement : IComparable
         {
             var cursor = from;
@@ -44,9 +44,9 @@ namespace RubyFlavor
             }
         }
 
-		/// <summary>
+        /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
-		/// </summary>
+        /// </summary>
         public static IEnumerable<TElement> DownTo<TElement>(this TElement from, TElement to, dynamic stepper) where TElement : IComparable
         {
             var cursor = from;
