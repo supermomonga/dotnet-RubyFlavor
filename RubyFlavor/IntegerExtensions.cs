@@ -25,5 +25,14 @@ namespace RubyFlavor
             while(cursor.CompareTo(to) >= 0 && cursor.CompareTo(from) <= 0)
                 yield return cursor--;
         }
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Integer/i/times.html
+        /// </summary>
+        public static IEnumerable<int> Times(this int receiver)
+        {
+            for (int i = 0; i < receiver; i++)
+                yield return i;
+        }
     }
 }

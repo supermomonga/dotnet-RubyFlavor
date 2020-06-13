@@ -44,5 +44,24 @@ namespace RubyFlavor.Tests
                 Assert.Equal(expected, actual);
             }
         }
+        [Fact]
+        public void TimesTest()
+        {
+            {
+                var actual = 10.Times().ToList();
+                var expected = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 0.Times().ToList();
+                var expected = new List<int> { };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = (-1).Times().ToList();
+                var expected = new List<int> { };
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }
