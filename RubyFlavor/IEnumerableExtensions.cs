@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Schema;
 
 namespace RubyFlavor
 {
@@ -77,6 +78,30 @@ namespace RubyFlavor
                 yield return (x, offset++);
             }
         }
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/one=3f.html
+        /// </summary>
+        public static bool One<T>(this IEnumerable<T> xs)
+            => xs.Count() == 1;
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/one=3f.html
+        /// </summary>
+        public static bool One<T>(this IEnumerable<T> xs, Func<T, bool> predicate)
+            => xs.Count(predicate) == 1;
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/none=3f.html
+        /// </summary>
+        public static bool None<T>(this IEnumerable<T> xs)
+            => !xs.Any();
+
+        /// <summary>
+        /// https://docs.ruby-lang.org/ja/latest/method/Enumerable/i/none=3f.html
+        /// </summary>
+        public static bool None<T>(this IEnumerable<T> xs, Func<T, bool> predicate)
+            => !xs.Any(predicate);
 
     }
 }

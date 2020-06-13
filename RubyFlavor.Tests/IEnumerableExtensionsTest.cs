@@ -130,5 +130,25 @@ namespace RubyFlavor.Tests
                 Assert.Equal(expected, xs.EachSlice(length));
             }
         }
+
+        [Fact]
+        public void OneTest()
+        {
+            Assert.Equal(false, new List<int> { }.One());
+            Assert.Equal(true, new List<int> { 1 }.One());
+            Assert.Equal(false, new List<int> { 1, 2 }.One());
+            Assert.Equal(true, new List<int> { 1, 2, 3, 4, 5 }.One(x => x % 3 == 0));
+            Assert.Equal(false, new List<int> { 1, 2, 3, 4, 5, 6 }.One(x => x % 3 == 0));
+        }
+
+        [Fact]
+        public void NoneTest()
+        {
+            Assert.Equal(true, new List<int> { }.None());
+            Assert.Equal(false, new List<int> { 1 }.None());
+            Assert.Equal(false, new List<int> { 1, 2 }.None());
+            Assert.Equal(false, new List<int> { 1, 2, 3 }.None(x => x % 3 == 0));
+            Assert.Equal(true, new List<int> { 1, 2, 4, 5 }.None(x => x % 3 == 0));
+        }
     }
 }
