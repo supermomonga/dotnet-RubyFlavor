@@ -21,13 +21,13 @@ namespace RubyFlavor
         /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
         /// </summary>
-        public static IEnumerable<TElement> UpTo<TElement>(this TElement from, TElement to, dynamic stepper) where TElement : IComparable
+        public static IEnumerable<TElement> UpTo<TElement>(this TElement from, TElement to, dynamic step) where TElement : IComparable
         {
             var cursor = from;
             while(cursor.CompareTo(to) <= 0 && cursor.CompareTo(from) >= 0)
             {
                 yield return cursor;
-                cursor = (dynamic)cursor + stepper;
+                cursor = (dynamic)cursor + step;
             }
         }
 
@@ -47,13 +47,13 @@ namespace RubyFlavor
         /// <summary>
         ///   https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
         /// </summary>
-        public static IEnumerable<TElement> DownTo<TElement>(this TElement from, TElement to, dynamic stepper) where TElement : IComparable
+        public static IEnumerable<TElement> DownTo<TElement>(this TElement from, TElement to, dynamic step) where TElement : IComparable
         {
             var cursor = from;
             while(cursor.CompareTo(to) >= 0 && cursor.CompareTo(from) <= 0)
             {
                 yield return cursor;
-                cursor = (dynamic)cursor - stepper;
+                cursor = (dynamic)cursor - step;
             }
         }
     }
