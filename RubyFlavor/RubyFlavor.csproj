@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <RepositoryUrl>https://github.com/supermomonga/dotnet-RubyFlavor</RepositoryUrl>
     <Copyright>supermomonga</Copyright>
     <Description>.NET Standard utility library which inspired by Ruby programming language.</Description>
