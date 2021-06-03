@@ -80,6 +80,11 @@ RubyFlavor is a .NET Standard library which provides Ruby programming language f
 - [X] [Integer#upto](https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html)
 - [X] [Integer#downto](https://docs.ruby-lang.org/ja/latest/method/Integer/i/downto.html)
 
+### Date class
+
+- [X] [Date#upto](https://docs.ruby-lang.org/ja/latest/method/Date/i/upto.html)
+- [X] [Date#downto](https://docs.ruby-lang.org/ja/latest/method/Date/i/downto.html)
+
 ### Others
 
 - [X] [Object#tap](https://docs.ruby-lang.org/ja/latest/method/Object/i/tap.html)
