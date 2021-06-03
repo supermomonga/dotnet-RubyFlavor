@@ -14,6 +14,6 @@ jobs:
       with:
         dotnet-version: '5.0.x'
     - run: dotnet build --configuration Release
-    - run: dotnet nuget push /RubyFlavor/bin/Release/RubyFlavor.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+    - run: dotnet nuget push RubyFlavor/bin/Release/RubyFlavor.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
