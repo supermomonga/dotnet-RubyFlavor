@@ -24,6 +24,26 @@ namespace RubyFlavor.Tests
                 var expected = new List<int> { };
                 Assert.Equal(expected, actual);
             }
+            {
+                var actual = 1.UpTo(10, step: 3).ToList();
+                var expected = new List<int> { 1, 4, 7, 10 };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 1.UpTo(11, step: 3).ToList();
+                var expected = new List<int> { 1, 4, 7, 10 };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 10.UpTo(10, step: 2).ToList();
+                var expected = new List<int> { 10 };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 2.UpTo(1, step: 2).ToList();
+                var expected = new List<int> { };
+                Assert.Equal(expected, actual);
+            }
         }
         [Fact]
         public void DownToTest()
@@ -40,6 +60,26 @@ namespace RubyFlavor.Tests
             }
             {
                 var actual = 1.DownTo(2).ToList();
+                var expected = new List<int> { };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 10.DownTo(1, step: 3).ToList();
+                var expected = new List<int> { 10, 7, 4, 1};
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 11.DownTo(1, step: 3).ToList();
+                var expected = new List<int> { 11, 8, 5, 2};
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 10.DownTo(10, step: 2).ToList();
+                var expected = new List<int> { 10 };
+                Assert.Equal(expected, actual);
+            }
+            {
+                var actual = 1.DownTo(2, step: 2).ToList();
                 var expected = new List<int> { };
                 Assert.Equal(expected, actual);
             }

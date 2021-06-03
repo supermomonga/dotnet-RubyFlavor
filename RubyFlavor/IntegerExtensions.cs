@@ -9,21 +9,27 @@ namespace RubyFlavor
         /// <summary>
         /// https://docs.ruby-lang.org/ja/latest/method/Integer/i/upto.html
         /// </summary>
-        public static IEnumerable<int> UpTo(this int from, int to)
+        public static IEnumerable<int> UpTo(this int from, int to, int step = 1)
         {
             var cursor = from;
             while(cursor.CompareTo(to) <= 0 && cursor.CompareTo(from) >= 0)
-                yield return cursor++;
+            {
+                yield return cursor;
+                cursor += step;
+            }
         }
 
         /// <summary>
         /// https://docs.ruby-lang.org/ja/latest/method/Integer/i/downto.html
         /// </summary>
-        public static IEnumerable<int> DownTo(this int from, int to)
+        public static IEnumerable<int> DownTo(this int from, int to, int step = 1)
         {
             var cursor = from;
             while(cursor.CompareTo(to) >= 0 && cursor.CompareTo(from) <= 0)
-                yield return cursor--;
+            {
+                yield return cursor;
+                cursor -= step;
+            }
         }
 
         /// <summary>
