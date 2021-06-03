@@ -1,0 +1,19 @@
+name: Publish NuGet package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+    - run: dotnet build --configuration Release
+    - run: dotnet nuget push /RubyFlavor/bin/Release/RubyFlavor.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

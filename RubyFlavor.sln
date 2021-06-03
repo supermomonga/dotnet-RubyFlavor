@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{46F693EC-2948-4849-BF3C-FAF779F8BA75}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish_nupkg.yaml = .github\workflows\publish_nupkg.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +53,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46F693EC-2948-4849-BF3C-FAF779F8BA75} = {21EE8698-44AF-4A68-9530-2BBC63CF83C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7FFD2E7-BF0C-4F00-B2B7-5826E3E5553F}
