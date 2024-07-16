@@ -23,6 +23,8 @@ namespace RubyFlavor.Tests
                 Assert.Equal(1, actual);
             }
         }
+
+        [Fact]
         public void YieldSelfTest()
         {
             {
