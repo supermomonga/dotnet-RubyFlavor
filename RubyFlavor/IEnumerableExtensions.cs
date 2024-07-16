@@ -5,7 +5,7 @@ using System.Linq;
 namespace RubyFlavor;
 internal class ChunkedList<TKey, TElement> : List<TElement>, IGrouping<TKey, TElement>
 {
-    public TKey Key { get; set; }
+    public required TKey Key { get; set; }
 }
 
 public static class IEnumerableExtensions
@@ -15,10 +15,10 @@ public static class IEnumerableExtensions
     /// </summary>
     public static IEnumerable<IGrouping<TKey, TElement>> Chunk<TElement, TKey>(this IEnumerable<TElement> xs, Func<TElement, TKey> keySelector)
     {
-        ChunkedList<TKey, TElement> chunkedListState = null;
+        ChunkedList<TKey, TElement>? chunkedListState = null;
         foreach (var x in xs)
         {
-            var key = keySelector.Invoke(x);
+            var key = keySelector.Invoke(x) ?? throw new ArgumentNullException(nameof(keySelector), "Key selector cannot return null.");
             if (chunkedListState == null)
             {
                 chunkedListState = new ChunkedList<TKey, TElement>() { Key = key };

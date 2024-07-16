@@ -12,61 +12,60 @@ namespace RubyFlavor.Tests
         public void ChunkTest()
         {
             var xs = new List<int> { 1, 3, 5, 2, 4, 6, 1, 2 };
-            Func<int, bool> keySelector = x => x % 2 == 0;
+            static bool keySelector(int x) => x % 2 == 0;
             var chunked = xs.Chunk(keySelector);
 
             Assert.Equal(4, chunked.Count());
             {
                 var x = chunked.ElementAt(0);
-                Assert.Equal(x.Key, false);
-                Assert.Equal(new List<int> { 1, 3, 5 }, x);
+                Assert.False(x.Key);
+                Assert.Equal([1, 3, 5], x);
             }
             {
                 var x = chunked.ElementAt(1);
-                Assert.Equal(x.Key, true);
-                Assert.Equal(new List<int> { 2, 4, 6 }, x);
+                Assert.True(x.Key);
+                Assert.Equal([2, 4, 6], x);
             }
             {
                 var x = chunked.ElementAt(2);
-                Assert.Equal(x.Key, false);
+                Assert.False(x.Key);
                 Assert.Equal(new List<int> { 1 }, x);
             }
             {
                 var x = chunked.ElementAt(3);
-                Assert.Equal(x.Key, true);
-                Assert.Equal(new List<int> { 2 }, x);
+                Assert.True(x.Key);
+                Assert.Equal([2], x);
             }
         }
 
         [Fact]
         public void CollectTest()
         {
-            Func<int, int> selector = x => x * 2;
-            var xs = (new List<int> { 1, 2, 3, 4, 5, 6 }).Collect(selector);
+            static int selector(int x) => x * 2;
+            var xs = new List<int> { 1, 2, 3, 4, 5, 6 }.Collect(selector);
 
             Assert.Equal(6, xs.Count());
-            Assert.Equal(xs.ElementAt(0), 2);
-            Assert.Equal(xs.ElementAt(1), 4);
+            Assert.Equal(2, xs.ElementAt(0));
+            Assert.Equal(4, xs.ElementAt(1));
         }
 
         [Fact]
         public void ChunkWithEmptyListTest()
         {
-            var xs = new List<int> {};
-            Func<int, bool> keySelector = x => x % 2 == 0;
+            var xs = new List<int> { };
+            static bool keySelector(int x) => x % 2 == 0;
             var chunked = xs.Chunk(keySelector);
 
-            Assert.Equal(0, chunked.Count());
+            Assert.Empty(chunked);
         }
 
         [Fact]
-        [InlineData()]
         public void EachConsecutiveTest()
         {
             {
-                var xs = new List<int> {};
+                var xs = new List<int> { };
                 var length = 2;
-                var expected = new List<List<int>> {};
+                var expected = new List<List<int>> { };
                 Assert.Equal(expected, xs.EachConsecutive(length));
             }
             {
@@ -90,19 +89,18 @@ namespace RubyFlavor.Tests
             {
                 var xs = Enumerable.Range(1, 4);
                 var length = 5;
-                var expected = new List<List<int>> {};
+                var expected = new List<List<int>> { };
                 Assert.Equal(expected, xs.EachConsecutive(length));
             }
         }
 
         [Fact]
-        [InlineData()]
         public void EachSliceTest()
         {
             {
-                var xs = new List<int> {};
+                var xs = new List<int> { };
                 var length = 2;
-                var expected = new List<List<int>> {};
+                var expected = new List<List<int>> { };
                 Assert.Equal(expected, xs.EachSlice(length));
             }
             {
@@ -134,21 +132,21 @@ namespace RubyFlavor.Tests
         [Fact]
         public void OneTest()
         {
-            Assert.Equal(false, new List<int> { }.One());
-            Assert.Equal(true, new List<int> { 1 }.One());
-            Assert.Equal(false, new List<int> { 1, 2 }.One());
-            Assert.Equal(true, new List<int> { 1, 2, 3, 4, 5 }.One(x => x % 3 == 0));
-            Assert.Equal(false, new List<int> { 1, 2, 3, 4, 5, 6 }.One(x => x % 3 == 0));
+            Assert.False(new List<int> { }.One());
+            Assert.True(new List<int> { 1 }.One());
+            Assert.False(new List<int> { 1, 2 }.One());
+            Assert.True(new List<int> { 1, 2, 3, 4, 5 }.One(x => x % 3 == 0));
+            Assert.False(new List<int> { 1, 2, 3, 4, 5, 6 }.One(x => x % 3 == 0));
         }
 
         [Fact]
         public void NoneTest()
         {
-            Assert.Equal(true, new List<int> { }.None());
-            Assert.Equal(false, new List<int> { 1 }.None());
-            Assert.Equal(false, new List<int> { 1, 2 }.None());
-            Assert.Equal(false, new List<int> { 1, 2, 3 }.None(x => x % 3 == 0));
-            Assert.Equal(true, new List<int> { 1, 2, 4, 5 }.None(x => x % 3 == 0));
+            Assert.True(new List<int> { }.None());
+            Assert.False(new List<int> { 1 }.None());
+            Assert.False(new List<int> { 1, 2 }.None());
+            Assert.False(new List<int> { 1, 2, 3 }.None(x => x % 3 == 0));
+            Assert.True(new List<int> { 1, 2, 4, 5 }.None(x => x % 3 == 0));
         }
     }
 }
