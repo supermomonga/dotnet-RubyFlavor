@@ -101,4 +101,34 @@ public static class IEnumerableExtensions
     public static bool None<T>(this IEnumerable<T> xs, Func<T, bool> predicate)
         => !xs.Any(predicate);
 
+    /// <summary>
+    ///   https://docs.ruby-lang.org/ja/latest/method/Array/i/compact.html
+    /// </summary>
+    public static IEnumerable<T> Compact<T>(this IEnumerable<T?> source)
+        where T : struct
+    {
+        foreach (var item in source)
+        {
+            if (item.HasValue)
+            {
+                yield return item.Value;
+            }
+        }
+    }
+
+
+    /// <summary>
+    ///   https://docs.ruby-lang.org/ja/latest/method/Array/i/compact.html
+    /// </summary>
+    public static IEnumerable<T> Compact<T>(this IEnumerable<T?> source)
+        where T : class
+    {
+        foreach (var item in source)
+        {
+            if (item != null)
+            {
+                yield return item;
+            }
+        }
+    }
 }

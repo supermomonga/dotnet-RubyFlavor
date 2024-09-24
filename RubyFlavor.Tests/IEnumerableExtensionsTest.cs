@@ -148,5 +148,34 @@ namespace RubyFlavor.Tests
             Assert.False(new List<int> { 1, 2, 3 }.None(x => x % 3 == 0));
             Assert.True(new List<int> { 1, 2, 4, 5 }.None(x => x % 3 == 0));
         }
+
+        [Fact]
+        public void CompactTest()
+        {
+            {
+                var xs = new List<int?> { };
+                var expected = new List<int> { };
+                var actual = xs.Compact();
+                Assert.Equal(expected, actual);
+            }
+            {
+                var xs = new List<int?> { null, null };
+                var expected = new List<int> { };
+                var actual = xs.Compact();
+                Assert.Equal(expected, actual);
+            }
+            {
+                var xs = new List<int?> { 1, 2, null, 3, null, 4 };
+                var expected = new List<int> { 1, 2, 3, 4 };
+                var actual = xs.Compact();
+                Assert.Equal(expected, actual);
+            }
+            {
+                var xs = new List<string> { "a", "b", null, "c", null, "d" };
+                var expected = new List<string> { "a", "b", "c", "d" };
+                var actual = xs.Compact();
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }
